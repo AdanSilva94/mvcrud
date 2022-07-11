@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MvcCRUDDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="circuitos">
+          <Key>
+            <PropertyRef Name="idcircuito" />
+          </Key>
+          <Property Name="idcircuito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="zona" Type="varchar" MaxLength="15" />
+          <Property Name="subestacion" Type="varchar" MaxLength="5" />
+          <Property Name="circuito" Type="int" />
+          <Property Name="secir" Type="varchar" MaxLength="15" />
+          <Property Name="descripcion" Type="varchar" MaxLength="70" />
+          <Property Name="clientes" Type="int" />
+          <Property Name="banco" Type="int" />
+          <Property Name="demandamaxima" Type="int" />
+          <Property Name="demandaminima" Type="int" />
+          <Property Name="demandamedia" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="nivtension" Type="varchar" MaxLength="10" />
+          <Property Name="urbanorural" Type="varchar" MaxLength="8" />
+          <Property Name="porcentajerural" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="dekma" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="dekms" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="kmtot" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ciage" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="contingencias">
+          <Key>
+            <PropertyRef Name="idcontingencia" />
+          </Key>
+          <Property Name="idcontingencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="varchar" MaxLength="10" />
+          <Property Name="proceso" Type="varchar" MaxLength="60" />
+          <Property Name="zona" Type="varchar" MaxLength="30" />
+          <Property Name="circuito" Type="int" />
+          <Property Name="categoria" Type="varchar" MaxLength="50" />
+          <Property Name="noeconomico" Type="bigint" />
+          <Property Name="rpe" Type="varchar" MaxLength="5" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+          <Property Name="entrada" Type="datetime" />
+          <Property Name="salida" Type="datetime" />
+          <Property Name="tiempo" Type="int" />
+          <Property Name="activo" Type="varchar" MaxLength="2" />
+          <Property Name="actividad" Type="varchar" MaxLength="35" />
+          <Property Name="supervisor" Type="varchar" MaxLength="60" />
+        </EntityType>
+        <EntityType Name="subestaciones">
+          <Key>
+            <PropertyRef Name="idsub" />
+          </Key>
+          <Property Name="idsub" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cveese" Type="varchar" MaxLength="5" />
+          <Property Name="inmueble" Type="varchar" MaxLength="50" />
+          <Property Name="cveareasuperior" Type="varchar" MaxLength="5" />
+          <Property Name="areasuperior" Type="varchar" MaxLength="15" />
+          <Property Name="rperesponsablect" Type="varchar" MaxLength="5" />
+          <Property Name="nombreresponsablect" Type="varchar" MaxLength="25" />
+          <Property Name="apellidopatresponsablect" Type="varchar" MaxLength="15" />
+          <Property Name="apellidomatresponsablect" Type="varchar" MaxLength="15" />
+          <Property Name="rperesponsablepc" Type="varchar" MaxLength="5" />
+          <Property Name="nombreresponsablepc" Type="varchar" MaxLength="25" />
+          <Property Name="apellidopatresponsablepc" Type="varchar" MaxLength="15" />
+          <Property Name="apellidomatresponsablepc" Type="varchar" MaxLength="15" />
+          <Property Name="estado" Type="varchar" MaxLength="15" />
+          <Property Name="alcaldiamun" Type="varchar" MaxLength="25" />
+          <Property Name="localidad" Type="varchar" MaxLength="30" />
+          <Property Name="cp" Type="int" />
+          <Property Name="callenumero" Type="varchar" MaxLength="200" />
+          <Property Name="colonia" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="trabajadores">
+          <Key>
+            <PropertyRef Name="idtrabajador" />
+          </Key>
+          <Property Name="idtrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cvezona" Type="varchar" MaxLength="5" />
+          <Property Name="zona" Type="varchar" MaxLength="3" />
+          <Property Name="tipocontrato" Type="varchar" MaxLength="15" />
+          <Property Name="rpe" Type="varchar" MaxLength="5" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" />
+          <Property Name="sexo" Type="varchar" MaxLength="1" />
+          <Property Name="tipotrab" Type="varchar" MaxLength="15" />
+          <Property Name="plaza" Type="varchar" MaxLength="10" />
+          <Property Name="categoria" Type="varchar" MaxLength="50" />
+          <Property Name="ramaactividad" Type="varchar" MaxLength="35" />
+          <Property Name="cenco" Type="int" />
+          <Property Name="centrocosto" Type="varchar" MaxLength="60" />
+          <Property Name="ubicacion" Type="varchar" MaxLength="60" />
+          <Property Name="ct" Type="int" />
+          <Property Name="centrotrabajo" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="vehiculos">
+          <Key>
+            <PropertyRef Name="idvehiculo" />
+          </Key>
+          <Property Name="idvehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="noeconomico" Type="bigint" />
+          <Property Name="tipovehiculo" Type="varchar" MaxLength="1" />
+          <Property Name="descvehiculo" Type="varchar" MaxLength="50" />
+          <Property Name="denominacion" Type="varchar" MaxLength="50" />
+          <Property Name="clvehic" Type="varchar" MaxLength="5" />
+          <Property Name="descclvehiculo" Type="varchar" MaxLength="50" />
+          <Property Name="noinventario" Type="varchar" MaxLength="30" />
+          <Property Name="noserie" Type="varchar" MaxLength="20" />
+          <Property Name="centroemplazamiento" Type="varchar" MaxLength="5" />
+          <Property Name="desccentroemplazamiento" Type="varchar" MaxLength="40" />
+          <Property Name="tipouso" Type="varchar" MaxLength="15" />
+          <Property Name="puestotrabajo" Type="varchar" MaxLength="5" />
+          <Property Name="descpuestotrabajo" Type="varchar" MaxLength="40" />
+          <Property Name="desccategoriapuestotrabajo" Type="varchar" MaxLength="40" />
+          <Property Name="campoclasificacion" Type="varchar" MaxLength="30" />
+          <Property Name="division" Type="varchar" MaxLength="5" />
+          <Property Name="descdivision" Type="varchar" MaxLength="25" />
+          <Property Name="puestotrabajoresponsable" Type="varchar" MaxLength="5" />
+          <Property Name="descpuestotrabajoresponsable" Type="varchar" MaxLength="40" />
+          <Property Name="placas" Type="varchar" MaxLength="10" />
+          <Property Name="traccion" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="MvcCRUDDBModelStoreContainer">
+          <EntitySet Name="circuitos" EntityType="Self.circuitos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contingencias" EntityType="Self.contingencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subestaciones" EntityType="Self.subestaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trabajadores" EntityType="Self.trabajadores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehiculos" EntityType="Self.vehiculos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MvcCRUDDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="circuitos">
+          <Key>
+            <PropertyRef Name="idcircuito" />
+          </Key>
+          <Property Name="idcircuito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="zona" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="subestacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="circuito" Type="Int32" />
+          <Property Name="secir" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="clientes" Type="Int32" />
+          <Property Name="banco" Type="Int32" />
+          <Property Name="demandamaxima" Type="Int32" />
+          <Property Name="demandaminima" Type="Int32" />
+          <Property Name="demandamedia" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="nivtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="urbanorural" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="porcentajerural" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dekma" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dekms" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="kmtot" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ciage" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="contingencias">
+          <Key>
+            <PropertyRef Name="idcontingencia" />
+          </Key>
+          <Property Name="idcontingencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="proceso" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="zona" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="circuito" Type="Int32" />
+          <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="noeconomico" Type="Int64" />
+          <Property Name="rpe" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="entrada" Type="DateTime" Precision="3" />
+          <Property Name="salida" Type="DateTime" Precision="3" />
+          <Property Name="tiempo" Type="Int32" />
+          <Property Name="activo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="actividad" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="supervisor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="subestaciones">
+          <Key>
+            <PropertyRef Name="idsub" />
+          </Key>
+          <Property Name="idsub" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cveese" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="inmueble" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cveareasuperior" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="areasuperior" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="rperesponsablect" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="nombreresponsablect" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="apellidopatresponsablect" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="apellidomatresponsablect" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="rperesponsablepc" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="nombreresponsablepc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="apellidopatresponsablepc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="apellidomatresponsablepc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="alcaldiamun" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="localidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="cp" Type="Int32" />
+          <Property Name="callenumero" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="colonia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="trabajadores">
+          <Key>
+            <PropertyRef Name="idtrabajador" />
+          </Key>
+          <Property Name="idtrabajador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cvezona" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="zona" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="tipocontrato" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="rpe" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="tipotrab" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="plaza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ramaactividad" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="cenco" Type="Int32" />
+          <Property Name="centrocosto" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ubicacion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="ct" Type="Int32" />
+          <Property Name="centrotrabajo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vehiculos">
+          <Key>
+            <PropertyRef Name="idvehiculo" />
+          </Key>
+          <Property Name="idvehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="noeconomico" Type="Int64" />
+          <Property Name="tipovehiculo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="descvehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="denominacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clvehic" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="descclvehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="noinventario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="noserie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="centroemplazamiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="desccentroemplazamiento" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="tipouso" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="puestotrabajo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="descpuestotrabajo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="desccategoriapuestotrabajo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="campoclasificacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="division" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="descdivision" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="puestotrabajoresponsable" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="descpuestotrabajoresponsable" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="placas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="traccion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DataBaseModelo" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="circuitos" EntityType="Self.circuitos" />
+          <EntitySet Name="contingencias" EntityType="Self.contingencias" />
+          <EntitySet Name="subestaciones" EntityType="Self.subestaciones" />
+          <EntitySet Name="trabajadores" EntityType="Self.trabajadores" />
+          <EntitySet Name="vehiculos" EntityType="Self.vehiculos" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MvcCRUDDBModelStoreContainer" CdmEntityContainer="DataBaseModelo">
+          <EntitySetMapping Name="circuitos">
+            <EntityTypeMapping TypeName="MvcCRUDDBModel.circuitos">
+              <MappingFragment StoreEntitySet="circuitos">
+                <ScalarProperty Name="idcircuito" ColumnName="idcircuito" />
+                <ScalarProperty Name="zona" ColumnName="zona" />
+                <ScalarProperty Name="subestacion" ColumnName="subestacion" />
+                <ScalarProperty Name="circuito" ColumnName="circuito" />
+                <ScalarProperty Name="secir" ColumnName="secir" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="clientes" ColumnName="clientes" />
+                <ScalarProperty Name="banco" ColumnName="banco" />
+                <ScalarProperty Name="demandamaxima" ColumnName="demandamaxima" />
+                <ScalarProperty Name="demandaminima" ColumnName="demandaminima" />
+                <ScalarProperty Name="demandamedia" ColumnName="demandamedia" />
+                <ScalarProperty Name="nivtension" ColumnName="nivtension" />
+                <ScalarProperty Name="urbanorural" ColumnName="urbanorural" />
+                <ScalarProperty Name="porcentajerural" ColumnName="porcentajerural" />
+                <ScalarProperty Name="dekma" ColumnName="dekma" />
+                <ScalarProperty Name="dekms" ColumnName="dekms" />
+                <ScalarProperty Name="kmtot" ColumnName="kmtot" />
+                <ScalarProperty Name="ciage" ColumnName="ciage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contingencias">
+            <EntityTypeMapping TypeName="MvcCRUDDBModel.contingencias">
+              <MappingFragment StoreEntitySet="contingencias">
+                <ScalarProperty Name="idcontingencia" ColumnName="idcontingencia" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="proceso" ColumnName="proceso" />
+                <ScalarProperty Name="zona" ColumnName="zona" />
+                <ScalarProperty Name="circuito" ColumnName="circuito" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="noeconomico" ColumnName="noeconomico" />
+                <ScalarProperty Name="rpe" ColumnName="rpe" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="entrada" ColumnName="entrada" />
+                <ScalarProperty Name="salida" ColumnName="salida" />
+                <ScalarProperty Name="tiempo" ColumnName="tiempo" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="actividad" ColumnName="actividad" />
+                <ScalarProperty Name="supervisor" ColumnName="supervisor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subestaciones">
+            <EntityTypeMapping TypeName="MvcCRUDDBModel.subestaciones">
+              <MappingFragment StoreEntitySet="subestaciones">
+                <ScalarProperty Name="idsub" ColumnName="idsub" />
+                <ScalarProperty Name="cveese" ColumnName="cveese" />
+                <ScalarProperty Name="inmueble" ColumnName="inmueble" />
+                <ScalarProperty Name="cveareasuperior" ColumnName="cveareasuperior" />
+                <ScalarProperty Name="areasuperior" ColumnName="areasuperior" />
+                <ScalarProperty Name="rperesponsablect" ColumnName="rperesponsablect" />
+                <ScalarProperty Name="nombreresponsablect" ColumnName="nombreresponsablect" />
+                <ScalarProperty Name="apellidopatresponsablect" ColumnName="apellidopatresponsablect" />
+                <ScalarProperty Name="apellidomatresponsablect" ColumnName="apellidomatresponsablect" />
+                <ScalarProperty Name="rperesponsablepc" ColumnName="rperesponsablepc" />
+                <ScalarProperty Name="nombreresponsablepc" ColumnName="nombreresponsablepc" />
+                <ScalarProperty Name="apellidopatresponsablepc" ColumnName="apellidopatresponsablepc" />
+                <ScalarProperty Name="apellidomatresponsablepc" ColumnName="apellidomatresponsablepc" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="alcaldiamun" ColumnName="alcaldiamun" />
+                <ScalarProperty Name="localidad" ColumnName="localidad" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="callenumero" ColumnName="callenumero" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trabajadores">
+            <EntityTypeMapping TypeName="MvcCRUDDBModel.trabajadores">
+              <MappingFragment StoreEntitySet="trabajadores">
+                <ScalarProperty Name="idtrabajador" ColumnName="idtrabajador" />
+                <ScalarProperty Name="cvezona" ColumnName="cvezona" />
+                <ScalarProperty Name="zona" ColumnName="zona" />
+                <ScalarProperty Name="tipocontrato" ColumnName="tipocontrato" />
+                <ScalarProperty Name="rpe" ColumnName="rpe" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="tipotrab" ColumnName="tipotrab" />
+                <ScalarProperty Name="plaza" ColumnName="plaza" />
+                <ScalarProperty Name="categoria" ColumnName="categoria" />
+                <ScalarProperty Name="ramaactividad" ColumnName="ramaactividad" />
+                <ScalarProperty Name="cenco" ColumnName="cenco" />
+                <ScalarProperty Name="centrocosto" ColumnName="centrocosto" />
+                <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+                <ScalarProperty Name="ct" ColumnName="ct" />
+                <ScalarProperty Name="centrotrabajo" ColumnName="centrotrabajo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehiculos">
+            <EntityTypeMapping TypeName="MvcCRUDDBModel.vehiculos">
+              <MappingFragment StoreEntitySet="vehiculos">
+                <ScalarProperty Name="idvehiculo" ColumnName="idvehiculo" />
+                <ScalarProperty Name="noeconomico" ColumnName="noeconomico" />
+                <ScalarProperty Name="tipovehiculo" ColumnName="tipovehiculo" />
+                <ScalarProperty Name="descvehiculo" ColumnName="descvehiculo" />
+                <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+                <ScalarProperty Name="clvehic" ColumnName="clvehic" />
+                <ScalarProperty Name="descclvehiculo" ColumnName="descclvehiculo" />
+                <ScalarProperty Name="noinventario" ColumnName="noinventario" />
+                <ScalarProperty Name="noserie" ColumnName="noserie" />
+                <ScalarProperty Name="centroemplazamiento" ColumnName="centroemplazamiento" />
+                <ScalarProperty Name="desccentroemplazamiento" ColumnName="desccentroemplazamiento" />
+                <ScalarProperty Name="tipouso" ColumnName="tipouso" />
+                <ScalarProperty Name="puestotrabajo" ColumnName="puestotrabajo" />
+                <ScalarProperty Name="descpuestotrabajo" ColumnName="descpuestotrabajo" />
+                <ScalarProperty Name="desccategoriapuestotrabajo" ColumnName="desccategoriapuestotrabajo" />
+                <ScalarProperty Name="campoclasificacion" ColumnName="campoclasificacion" />
+                <ScalarProperty Name="division" ColumnName="division" />
+                <ScalarProperty Name="descdivision" ColumnName="descdivision" />
+                <ScalarProperty Name="puestotrabajoresponsable" ColumnName="puestotrabajoresponsable" />
+                <ScalarProperty Name="descpuestotrabajoresponsable" ColumnName="descpuestotrabajoresponsable" />
+                <ScalarProperty Name="placas" ColumnName="placas" />
+                <ScalarProperty Name="traccion" ColumnName="traccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

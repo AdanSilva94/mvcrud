@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcCRUDDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="circuitos">
+    <Key>
+      <PropertyRef Name="idcircuito" />
+    </Key>
+    <Property Name="idcircuito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="zona" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="subestacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="circuito" Type="Int32" />
+    <Property Name="secir" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="clientes" Type="Int32" />
+    <Property Name="banco" Type="Int32" />
+    <Property Name="demandamaxima" Type="Int32" />
+    <Property Name="demandaminima" Type="Int32" />
+    <Property Name="demandamedia" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nivtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="urbanorural" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="porcentajerural" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dekma" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dekms" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="kmtot" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ciage" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="contingencias">
+    <Key>
+      <PropertyRef Name="idcontingencia" />
+    </Key>
+    <Property Name="idcontingencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="proceso" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="zona" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="circuito" Type="Int32" />
+    <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="noeconomico" Type="Int64" />
+    <Property Name="rpe" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="entrada" Type="DateTime" Precision="3" />
+    <Property Name="salida" Type="DateTime" Precision="3" />
+    <Property Name="tiempo" Type="Int32" />
+    <Property Name="activo" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="actividad" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="supervisor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="subestaciones">
+    <Key>
+      <PropertyRef Name="idsub" />
+    </Key>
+    <Property Name="idsub" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cveese" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="inmueble" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cveareasuperior" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="areasuperior" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="rperesponsablect" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="nombreresponsablect" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="apellidopatresponsablect" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="apellidomatresponsablect" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="rperesponsablepc" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="nombreresponsablepc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="apellidopatresponsablepc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="apellidomatresponsablepc" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="alcaldiamun" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="localidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cp" Type="Int32" />
+    <Property Name="callenumero" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="colonia" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="trabajadores">
+    <Key>
+      <PropertyRef Name="idtrabajador" />
+    </Key>
+    <Property Name="idtrabajador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cvezona" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="zona" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="tipocontrato" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="rpe" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="tipotrab" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="plaza" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ramaactividad" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="cenco" Type="Int32" />
+    <Property Name="centrocosto" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ubicacion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ct" Type="Int32" />
+    <Property Name="centrotrabajo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vehiculos">
+    <Key>
+      <PropertyRef Name="idvehiculo" />
+    </Key>
+    <Property Name="idvehiculo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="noeconomico" Type="Int64" />
+    <Property Name="tipovehiculo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="descvehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="denominacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="clvehic" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="descclvehiculo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="noinventario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="noserie" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="centroemplazamiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="desccentroemplazamiento" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="tipouso" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="puestotrabajo" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="descpuestotrabajo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="desccategoriapuestotrabajo" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="campoclasificacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="division" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="descdivision" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="puestotrabajoresponsable" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="descpuestotrabajoresponsable" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="placas" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="traccion" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DataBaseModelo" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="circuitos" EntityType="Self.circuitos" />
+    <EntitySet Name="contingencias" EntityType="Self.contingencias" />
+    <EntitySet Name="subestaciones" EntityType="Self.subestaciones" />
+    <EntitySet Name="trabajadores" EntityType="Self.trabajadores" />
+    <EntitySet Name="vehiculos" EntityType="Self.vehiculos" />
+  </EntityContainer>
+</Schema>

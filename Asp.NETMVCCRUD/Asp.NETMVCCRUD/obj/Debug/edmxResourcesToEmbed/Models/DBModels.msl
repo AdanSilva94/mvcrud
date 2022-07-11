@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcCRUDDBModelStoreContainer" CdmEntityContainer="DataBaseModelo">
+    <EntitySetMapping Name="circuitos">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.circuitos">
+        <MappingFragment StoreEntitySet="circuitos">
+          <ScalarProperty Name="idcircuito" ColumnName="idcircuito" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+          <ScalarProperty Name="subestacion" ColumnName="subestacion" />
+          <ScalarProperty Name="circuito" ColumnName="circuito" />
+          <ScalarProperty Name="secir" ColumnName="secir" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="clientes" ColumnName="clientes" />
+          <ScalarProperty Name="banco" ColumnName="banco" />
+          <ScalarProperty Name="demandamaxima" ColumnName="demandamaxima" />
+          <ScalarProperty Name="demandaminima" ColumnName="demandaminima" />
+          <ScalarProperty Name="demandamedia" ColumnName="demandamedia" />
+          <ScalarProperty Name="nivtension" ColumnName="nivtension" />
+          <ScalarProperty Name="urbanorural" ColumnName="urbanorural" />
+          <ScalarProperty Name="porcentajerural" ColumnName="porcentajerural" />
+          <ScalarProperty Name="dekma" ColumnName="dekma" />
+          <ScalarProperty Name="dekms" ColumnName="dekms" />
+          <ScalarProperty Name="kmtot" ColumnName="kmtot" />
+          <ScalarProperty Name="ciage" ColumnName="ciage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contingencias">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.contingencias">
+        <MappingFragment StoreEntitySet="contingencias">
+          <ScalarProperty Name="idcontingencia" ColumnName="idcontingencia" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="proceso" ColumnName="proceso" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+          <ScalarProperty Name="circuito" ColumnName="circuito" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="noeconomico" ColumnName="noeconomico" />
+          <ScalarProperty Name="rpe" ColumnName="rpe" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="entrada" ColumnName="entrada" />
+          <ScalarProperty Name="salida" ColumnName="salida" />
+          <ScalarProperty Name="tiempo" ColumnName="tiempo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="actividad" ColumnName="actividad" />
+          <ScalarProperty Name="supervisor" ColumnName="supervisor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subestaciones">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.subestaciones">
+        <MappingFragment StoreEntitySet="subestaciones">
+          <ScalarProperty Name="idsub" ColumnName="idsub" />
+          <ScalarProperty Name="cveese" ColumnName="cveese" />
+          <ScalarProperty Name="inmueble" ColumnName="inmueble" />
+          <ScalarProperty Name="cveareasuperior" ColumnName="cveareasuperior" />
+          <ScalarProperty Name="areasuperior" ColumnName="areasuperior" />
+          <ScalarProperty Name="rperesponsablect" ColumnName="rperesponsablect" />
+          <ScalarProperty Name="nombreresponsablect" ColumnName="nombreresponsablect" />
+          <ScalarProperty Name="apellidopatresponsablect" ColumnName="apellidopatresponsablect" />
+          <ScalarProperty Name="apellidomatresponsablect" ColumnName="apellidomatresponsablect" />
+          <ScalarProperty Name="rperesponsablepc" ColumnName="rperesponsablepc" />
+          <ScalarProperty Name="nombreresponsablepc" ColumnName="nombreresponsablepc" />
+          <ScalarProperty Name="apellidopatresponsablepc" ColumnName="apellidopatresponsablepc" />
+          <ScalarProperty Name="apellidomatresponsablepc" ColumnName="apellidomatresponsablepc" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="alcaldiamun" ColumnName="alcaldiamun" />
+          <ScalarProperty Name="localidad" ColumnName="localidad" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="callenumero" ColumnName="callenumero" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="trabajadores">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.trabajadores">
+        <MappingFragment StoreEntitySet="trabajadores">
+          <ScalarProperty Name="idtrabajador" ColumnName="idtrabajador" />
+          <ScalarProperty Name="cvezona" ColumnName="cvezona" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+          <ScalarProperty Name="tipocontrato" ColumnName="tipocontrato" />
+          <ScalarProperty Name="rpe" ColumnName="rpe" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="tipotrab" ColumnName="tipotrab" />
+          <ScalarProperty Name="plaza" ColumnName="plaza" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+          <ScalarProperty Name="ramaactividad" ColumnName="ramaactividad" />
+          <ScalarProperty Name="cenco" ColumnName="cenco" />
+          <ScalarProperty Name="centrocosto" ColumnName="centrocosto" />
+          <ScalarProperty Name="ubicacion" ColumnName="ubicacion" />
+          <ScalarProperty Name="ct" ColumnName="ct" />
+          <ScalarProperty Name="centrotrabajo" ColumnName="centrotrabajo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehiculos">
+      <EntityTypeMapping TypeName="MvcCRUDDBModel.vehiculos">
+        <MappingFragment StoreEntitySet="vehiculos">
+          <ScalarProperty Name="idvehiculo" ColumnName="idvehiculo" />
+          <ScalarProperty Name="noeconomico" ColumnName="noeconomico" />
+          <ScalarProperty Name="tipovehiculo" ColumnName="tipovehiculo" />
+          <ScalarProperty Name="descvehiculo" ColumnName="descvehiculo" />
+          <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+          <ScalarProperty Name="clvehic" ColumnName="clvehic" />
+          <ScalarProperty Name="descclvehiculo" ColumnName="descclvehiculo" />
+          <ScalarProperty Name="noinventario" ColumnName="noinventario" />
+          <ScalarProperty Name="noserie" ColumnName="noserie" />
+          <ScalarProperty Name="centroemplazamiento" ColumnName="centroemplazamiento" />
+          <ScalarProperty Name="desccentroemplazamiento" ColumnName="desccentroemplazamiento" />
+          <ScalarProperty Name="tipouso" ColumnName="tipouso" />
+          <ScalarProperty Name="puestotrabajo" ColumnName="puestotrabajo" />
+          <ScalarProperty Name="descpuestotrabajo" ColumnName="descpuestotrabajo" />
+          <ScalarProperty Name="desccategoriapuestotrabajo" ColumnName="desccategoriapuestotrabajo" />
+          <ScalarProperty Name="campoclasificacion" ColumnName="campoclasificacion" />
+          <ScalarProperty Name="division" ColumnName="division" />
+          <ScalarProperty Name="descdivision" ColumnName="descdivision" />
+          <ScalarProperty Name="puestotrabajoresponsable" ColumnName="puestotrabajoresponsable" />
+          <ScalarProperty Name="descpuestotrabajoresponsable" ColumnName="descpuestotrabajoresponsable" />
+          <ScalarProperty Name="placas" ColumnName="placas" />
+          <ScalarProperty Name="traccion" ColumnName="traccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

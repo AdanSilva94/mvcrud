@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcCRUDDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="circuitos">
+    <Key>
+      <PropertyRef Name="idcircuito" />
+    </Key>
+    <Property Name="idcircuito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zona" Type="varchar" MaxLength="15" />
+    <Property Name="subestacion" Type="varchar" MaxLength="5" />
+    <Property Name="circuito" Type="int" />
+    <Property Name="secir" Type="varchar" MaxLength="15" />
+    <Property Name="descripcion" Type="varchar" MaxLength="70" />
+    <Property Name="clientes" Type="int" />
+    <Property Name="banco" Type="int" />
+    <Property Name="demandamaxima" Type="int" />
+    <Property Name="demandaminima" Type="int" />
+    <Property Name="demandamedia" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="nivtension" Type="varchar" MaxLength="10" />
+    <Property Name="urbanorural" Type="varchar" MaxLength="8" />
+    <Property Name="porcentajerural" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="dekma" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="dekms" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="kmtot" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ciage" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="contingencias">
+    <Key>
+      <PropertyRef Name="idcontingencia" />
+    </Key>
+    <Property Name="idcontingencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="10" />
+    <Property Name="proceso" Type="varchar" MaxLength="60" />
+    <Property Name="zona" Type="varchar" MaxLength="30" />
+    <Property Name="circuito" Type="int" />
+    <Property Name="categoria" Type="varchar" MaxLength="50" />
+    <Property Name="noeconomico" Type="bigint" />
+    <Property Name="rpe" Type="varchar" MaxLength="5" />
+    <Property Name="nombre" Type="varchar" MaxLength="60" />
+    <Property Name="entrada" Type="datetime" />
+    <Property Name="salida" Type="datetime" />
+    <Property Name="tiempo" Type="int" />
+    <Property Name="activo" Type="varchar" MaxLength="2" />
+    <Property Name="actividad" Type="varchar" MaxLength="35" />
+    <Property Name="supervisor" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="subestaciones">
+    <Key>
+      <PropertyRef Name="idsub" />
+    </Key>
+    <Property Name="idsub" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cveese" Type="varchar" MaxLength="5" />
+    <Property Name="inmueble" Type="varchar" MaxLength="50" />
+    <Property Name="cveareasuperior" Type="varchar" MaxLength="5" />
+    <Property Name="areasuperior" Type="varchar" MaxLength="15" />
+    <Property Name="rperesponsablect" Type="varchar" MaxLength="5" />
+    <Property Name="nombreresponsablect" Type="varchar" MaxLength="25" />
+    <Property Name="apellidopatresponsablect" Type="varchar" MaxLength="15" />
+    <Property Name="apellidomatresponsablect" Type="varchar" MaxLength="15" />
+    <Property Name="rperesponsablepc" Type="varchar" MaxLength="5" />
+    <Property Name="nombreresponsablepc" Type="varchar" MaxLength="25" />
+    <Property Name="apellidopatresponsablepc" Type="varchar" MaxLength="15" />
+    <Property Name="apellidomatresponsablepc" Type="varchar" MaxLength="15" />
+    <Property Name="estado" Type="varchar" MaxLength="15" />
+    <Property Name="alcaldiamun" Type="varchar" MaxLength="25" />
+    <Property Name="localidad" Type="varchar" MaxLength="30" />
+    <Property Name="cp" Type="int" />
+    <Property Name="callenumero" Type="varchar" MaxLength="200" />
+    <Property Name="colonia" Type="varchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="trabajadores">
+    <Key>
+      <PropertyRef Name="idtrabajador" />
+    </Key>
+    <Property Name="idtrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cvezona" Type="varchar" MaxLength="5" />
+    <Property Name="zona" Type="varchar" MaxLength="3" />
+    <Property Name="tipocontrato" Type="varchar" MaxLength="15" />
+    <Property Name="rpe" Type="varchar" MaxLength="5" />
+    <Property Name="nombre" Type="varchar" MaxLength="60" />
+    <Property Name="sexo" Type="varchar" MaxLength="1" />
+    <Property Name="tipotrab" Type="varchar" MaxLength="15" />
+    <Property Name="plaza" Type="varchar" MaxLength="10" />
+    <Property Name="categoria" Type="varchar" MaxLength="50" />
+    <Property Name="ramaactividad" Type="varchar" MaxLength="35" />
+    <Property Name="cenco" Type="int" />
+    <Property Name="centrocosto" Type="varchar" MaxLength="60" />
+    <Property Name="ubicacion" Type="varchar" MaxLength="60" />
+    <Property Name="ct" Type="int" />
+    <Property Name="centrotrabajo" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="vehiculos">
+    <Key>
+      <PropertyRef Name="idvehiculo" />
+    </Key>
+    <Property Name="idvehiculo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="noeconomico" Type="bigint" />
+    <Property Name="tipovehiculo" Type="varchar" MaxLength="1" />
+    <Property Name="descvehiculo" Type="varchar" MaxLength="50" />
+    <Property Name="denominacion" Type="varchar" MaxLength="50" />
+    <Property Name="clvehic" Type="varchar" MaxLength="5" />
+    <Property Name="descclvehiculo" Type="varchar" MaxLength="50" />
+    <Property Name="noinventario" Type="varchar" MaxLength="30" />
+    <Property Name="noserie" Type="varchar" MaxLength="20" />
+    <Property Name="centroemplazamiento" Type="varchar" MaxLength="5" />
+    <Property Name="desccentroemplazamiento" Type="varchar" MaxLength="40" />
+    <Property Name="tipouso" Type="varchar" MaxLength="15" />
+    <Property Name="puestotrabajo" Type="varchar" MaxLength="5" />
+    <Property Name="descpuestotrabajo" Type="varchar" MaxLength="40" />
+    <Property Name="desccategoriapuestotrabajo" Type="varchar" MaxLength="40" />
+    <Property Name="campoclasificacion" Type="varchar" MaxLength="30" />
+    <Property Name="division" Type="varchar" MaxLength="5" />
+    <Property Name="descdivision" Type="varchar" MaxLength="25" />
+    <Property Name="puestotrabajoresponsable" Type="varchar" MaxLength="5" />
+    <Property Name="descpuestotrabajoresponsable" Type="varchar" MaxLength="40" />
+    <Property Name="placas" Type="varchar" MaxLength="10" />
+    <Property Name="traccion" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="MvcCRUDDBModelStoreContainer">
+    <EntitySet Name="circuitos" EntityType="Self.circuitos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contingencias" EntityType="Self.contingencias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subestaciones" EntityType="Self.subestaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="trabajadores" EntityType="Self.trabajadores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vehiculos" EntityType="Self.vehiculos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
